@@ -22,15 +22,15 @@ class Triangle
   end
   
   def valid
-    if one <= 0 || two <= 0 || three <= 0
+    if side_1 <= 0 || side_2 <= 0 || side_3 <= 0
       begin
         raise TriangleError
       end
-    elsif one == nil || two == nil || three == nil
+    elsif side_1 == nil || side_2 == nil || side_3 == nil
       begin
         raise TriangleError
       end
-    elsif one + two <= three || one + three <= two || three + two <= one
+    elsif side_1 + side_2 <= side_3 || side_1 + side_3 <= side_2 || side_3 + side_2 <= side_1
       begin
         raise TriangleError
       end
