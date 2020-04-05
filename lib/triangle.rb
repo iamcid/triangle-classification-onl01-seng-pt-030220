@@ -9,11 +9,11 @@ class Triangle
   end
   
   def kind 
-    if @side1 == @side_2 && @y == @z
+    if @side_1 == @side_2 && @side_2 == @side_3
       :equilateral 
-    elsif @x == @y || @x == @z || @z == @y 
+    elsif @side_1 == @side_2 || @side_1 == @side_3 || @side_3 == @side_2 
       :isosceles 
-    elsif @x != @y && @x != @z && @y != @z 
+    elsif @side_1 != @side_2 && @side_1 != @side_3 && @side_3 != @side_3 
       :scalene 
     else
       raise TriangleError
