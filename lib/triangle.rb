@@ -6,20 +6,17 @@ class Triangle
     @side_3 = side_3
   end
   
-  def kind
-    if (@side_1 <= 0) || (@side_2 <= 0) || (@side_3 <= 0)
-      raise TriangleError
-    elsif (@side_1+@side_2 <= @side_3) || (@side_1+@side_3 <= @side_2) || (@side_2+@side_3 <= @side_1)
-      raise TriangleError
+  def kind 
+    if @x == @y && @y == @z
+      :equilateral 
+    elsif @x == @y || @x == @z || @z == @y 
+      :isosceles 
+    elsif @x != @y && @x != @z && @y != @z 
+      :scalene 
     else
-      if (@side_1 == @side_2) && (@side_2 == @side_3)
-        :equilateral
-      elsif (@side_1 == @side_2) || (@side_2 == @side_3) || (@side_1 == @side_3)
-        :isosceles
-      elsif (@side_1 != @side_2) && (@side_2 != @side_3) && (@side_1 != @side_3)
-        :scalene
-      end
-    end
+      raise TriangleError
+    end 
+  end
   
   class TriangleError < StandardError
     
