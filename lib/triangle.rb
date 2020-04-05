@@ -21,6 +21,8 @@ class Triangle
     end 
   end
   
+  def valid
+  
   class TriangleError < StandardError
     
   end
